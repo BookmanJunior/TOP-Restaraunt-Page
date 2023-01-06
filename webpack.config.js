@@ -28,6 +28,9 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|webp)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "assets/[name][hash][ext][query]",
+        },
       },
     ],
   },
