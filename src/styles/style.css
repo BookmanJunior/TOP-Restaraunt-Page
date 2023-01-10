@@ -4,8 +4,9 @@
 :root {
   --color-primary: #fff;
   --color-accent: #c8a97e;
-  --background-overlay: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5));
-  --border-settings: 1px solid rgb(255 255 255 / 0.2);
+  --header-overlay: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5));
+  --background-overlay: linear-gradient(rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.7));
+  --border-settings: 1px solid rgb(255 255 255 / 0.1);
   --ff-primary: "Poppins", Arial, sans-serif;
   --ff-accent: "Great Vibes", "Comic Sans MS", "Comic Sans", cursive;
 }
@@ -29,7 +30,7 @@
   */
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 /*
     Typographic tweaks!
@@ -83,9 +84,8 @@ h6 {
 /* Header styles */
 header {
   min-height: 450px;
-  background-image: var(--background-overlay), url("../assets/header.jpg");
+  background-image: var(--header-overlay), url("../assets/header.jpg");
   background-size: cover;
-  color: white;
   display: grid;
   grid-template-rows: 70px 1fr;
 }
@@ -93,12 +93,13 @@ header {
 nav {
   display: flex;
   justify-content: center;
+  color: var(--color-primary);
   border-bottom: var(--border-settings);
   font-family: var(--ff-primary);
 }
 
 .nav-wrapper {
-  width: 50%;
+  width: min(800px, 90%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,4 +129,66 @@ li.active:hover {
 
 li.active {
   color: var(--color-accent);
+}
+
+/* Home styles */
+.home-section {
+  height: 100vh;
+  background-image: var(--background-overlay),
+    url("../assets/backgroundImg.jpg");
+  background-size: cover;
+  background-position: 50% 10%;
+  font-family: var(--ff-primary);
+  color: var(--color-primary);
+
+  display: grid;
+  grid-template-rows: 7.5% 1fr 20%;
+  overflow: auto;
+}
+
+.info-wrapper {
+  place-self: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.main-logo {
+  font-size: 5rem;
+  font-family: var(--ff-accent);
+  color: var(--color-accent);
+}
+
+.rest-disc {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.featured-items {
+  border-top: var(--border-settings);
+}
+
+.featured-items-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+  row-gap: 0.5em;
+  margin-top: 10px;
+  height: 90%;
+}
+
+.featured-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+}
+
+.featured-item img {
+  border-radius: 50%;
+  width: 90px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  user-select: none;
 }
