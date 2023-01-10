@@ -1,2 +1,4 @@
 import "./styles/style.css";
-import { navbar, header } from "./modules/header";
+import home from "./modules/home";
+
+document.getElementById("content").appendChild(home());
