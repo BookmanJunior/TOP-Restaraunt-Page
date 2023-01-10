@@ -4,7 +4,8 @@
 :root {
   --color-primary: #fff;
   --color-accent: #c8a97e;
-  --background-overlay: linear-gradient(rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.7));
+  --background-overlay: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5));
+  --border-settings: 1px solid rgb(255 255 255 / 0.2);
   --ff-primary: "Poppins", Arial, sans-serif;
   --ff-accent: "Great Vibes", "Comic Sans MS", "Comic Sans", cursive;
 }
@@ -77,4 +78,54 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* Header styles */
+header {
+  min-height: 450px;
+  background-image: var(--background-overlay), url("../assets/header.jpg");
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: var(--border-settings);
+  font-family: var(--ff-primary);
+}
+
+.nav-wrapper {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-header {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+ul {
+  display: flex;
+  gap: 2.5em;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover,
+li.active:hover {
+  color: var(--color-primary);
+}
+
+li.active {
+  color: var(--color-accent);
 }
