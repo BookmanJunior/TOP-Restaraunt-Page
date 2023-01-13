@@ -10,6 +10,7 @@ const featuredMenu = {
     name: "Fish Tacos",
     img: fishTacos,
     price: 13,
+    ingredients: ["Fish", "Sriracha", "Garlic Powder", "Lime Juice"],
   },
   item2: {
     name: "Chicken Tostadas",
@@ -83,21 +84,29 @@ function menuItems() {
     const itemContainer = document.createElement("div");
     const itemImg = new Image();
     const itemInfoContainter = document.createElement("div");
+    const itemHeader = document.createElement("div");
     const itemTitle = document.createElement("h2");
     const itemPrice = document.createElement("span");
+    const itemIngredients = document.createElement("p");
     const orderBtn = document.createElement("button");
 
     itemContainer.classList.add("menu-item");
     itemImg.classList.add("item-img");
+    itemTitle.classList.add("item-name");
+    itemIngredients.classList.add("item-ingredients");
+    itemPrice.classList.add("item-price");
     itemInfoContainter.classList.add("info-container");
+    itemHeader.classList.add("item-header");
 
     itemImg.src = item.img;
     itemTitle.textContent = item.name;
-    itemPrice.textContent = item.price;
+    itemPrice.textContent = `$${item.price}`;
+    itemIngredients.textContent = item.ingredients;
     orderBtn.textContent = "Order Now";
 
     itemContainer.append(itemImg, itemInfoContainter);
-    itemInfoContainter.append(itemTitle, itemPrice, orderBtn);
+    itemInfoContainter.append(itemHeader, itemIngredients, orderBtn);
+    itemHeader.append(itemTitle, itemPrice);
     menuWrapper.appendChild(itemContainer);
   });
 
