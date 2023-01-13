@@ -42,6 +42,7 @@ export default function menuSection() {
   const menuContainer = document.createElement("section");
   const container = document.createElement("div");
 
+  menuContainer.classList.add("menu-section");
   container.classList.add("container");
 
   menuContainer.appendChild(container);
