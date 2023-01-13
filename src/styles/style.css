@@ -20,10 +20,11 @@
   box-sizing: border-box;
 }
 /*
-    2. Remove default margin
+    2. Remove default margin & padding
   */
 * {
   margin: 0;
+  padding: 0;
 }
 /*
     3. Allow percentage-based heights in the application
@@ -81,6 +82,12 @@ h6 {
   isolation: isolate;
 }
 
+/* General styles */
+
+#content {
+  font-family: var(--ff-primary);
+}
+
 /* Header styles */
 header {
   min-height: 450px;
@@ -95,11 +102,14 @@ nav {
   justify-content: center;
   color: var(--color-primary);
   border-bottom: var(--border-settings);
-  font-family: var(--ff-primary);
+}
+
+.nav-wrapper,
+.container {
+  width: min(1140px, 90%);
 }
 
 .nav-wrapper {
-  width: min(800px, 90%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,8 +132,8 @@ li {
   cursor: pointer;
 }
 
-li:hover,
-li.active:hover {
+.nav-item:hover,
+.nav-item.active:hover {
   color: var(--color-primary);
 }
 
@@ -196,10 +206,8 @@ li.active {
 /* Menu style */
 
 .menu-wrapper {
-  width: min(1000px, 90%);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  margin-inline: auto;
 }
 
 .menu-item {
