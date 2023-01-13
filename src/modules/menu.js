@@ -62,6 +62,9 @@ function menuNav() {
   navNames.forEach((item) => {
     const liElement = document.createElement("li");
     liElement.textContent = item;
+    if (item === "Dinner") {
+      liElement.classList.add("menu-nav-item", "menu-link-active");
+    }
     liElement.classList.add("menu-nav-item");
 
     navList.appendChild(liElement);
