@@ -40,10 +40,33 @@ const featuredMenu = {
 
 export default function menuSection() {
   const menuContainer = document.createElement("section");
+  const container = document.createElement("div");
 
-  menuContainer.appendChild(menuItems());
+  container.classList.add("container");
+
+  menuContainer.appendChild(container);
+  container.appendChild(menuNav());
+  container.appendChild(menuItems());
 
   return menuContainer;
+}
+
+function menuNav() {
+  const navNames = ["Breakfast", "Lunch", "Dinner", "Drinks", "Desserts"];
+
+  const navList = document.createElement("ul");
+
+  navList.classList.add("menu-links");
+
+  navNames.forEach((item) => {
+    const liElement = document.createElement("li");
+    liElement.textContent = item;
+    liElement.classList.add("menu-nav-item");
+
+    navList.appendChild(liElement);
+  });
+
+  return navList;
 }
 
 function menuItems() {
