@@ -17,7 +17,7 @@ function navbar() {
   links.forEach((link) => {
     const li = document.createElement("li");
     li.textContent = link;
-    li.classList.add("nav-item");
+    li.classList.add("nav-item", `${link.toLowerCase()}-link`);
     navLinks.appendChild(li);
   });
 
