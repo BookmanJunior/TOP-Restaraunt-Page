@@ -1,27 +1,5 @@
 import { navbar } from "./header";
-import fishTacos from "../assets/fish-tacos.jpg";
-import chickenTostadas from "../assets/chicken-tostadas.jpg";
-import bakedChickenQuesadillas from "../assets/Baked-Chicken-Quesadillas.jpg";
-import chickenEnchiladas from "../assets/chicken-enchiladas.jpg";
-
-const featuredMenu = {
-  item1: {
-    name: "Fish Tacos",
-    img: fishTacos,
-  },
-  item2: {
-    name: "Chicken Tostadas",
-    img: chickenTostadas,
-  },
-  item3: {
-    name: "Baked Chicken Quesadillas",
-    img: bakedChickenQuesadillas,
-  },
-  item4: {
-    name: "Chicken Enchiladas",
-    img: chickenEnchiladas,
-  },
-};
+import menuItems from "./menuItems";
 
 export default function home() {
   const homeSection = document.createElement("section");
@@ -60,21 +38,23 @@ function featuredItems() {
   featuredItemsContainer.classList.add("featured-items");
   featuredItemsWrapper.classList.add("featured-items-wrapper");
 
-  Object.values(featuredMenu).forEach((item) => {
-    const featuredItem = document.createElement("div");
-    const itemImg = new Image();
-    const itemName = document.createElement("p");
+  Object.values(menuItems)
+    .slice(0, 4)
+    .forEach((item) => {
+      const featuredItem = document.createElement("div");
+      const itemImg = new Image();
+      const itemName = document.createElement("p");
 
-    featuredItem.classList.add("featured-item");
+      featuredItem.classList.add("featured-item");
 
-    itemImg.src = item.img;
-    itemImg.draggable = false;
-    itemName.textContent = item.name;
+      itemImg.src = item.img;
+      itemImg.draggable = false;
+      itemName.textContent = item.name;
 
-    featuredItem.appendChild(itemImg);
-    featuredItem.appendChild(itemName);
-    featuredItemsWrapper.appendChild(featuredItem);
-  });
+      featuredItem.appendChild(itemImg);
+      featuredItem.appendChild(itemName);
+      featuredItemsWrapper.appendChild(featuredItem);
+    });
 
   featuredItemsContainer.appendChild(featuredItemsWrapper);
 
