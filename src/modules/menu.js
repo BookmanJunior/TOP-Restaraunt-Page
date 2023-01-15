@@ -57,6 +57,7 @@ function menuItemsComponent() {
     itemPrice.classList.add("item-price");
     itemInfoContainter.classList.add("info-container");
     itemHeader.classList.add("item-header");
+    orderBtn.classList.add("order-btn");
 
     itemImg.src = item.img;
     itemTitle.textContent = item.name;
