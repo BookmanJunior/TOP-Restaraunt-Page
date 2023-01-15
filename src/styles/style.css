@@ -270,6 +270,20 @@ li.active {
 .info-container {
   border: 1px solid #e6e6e6;
   padding: 1em;
+
+  display: grid;
+  align-content: space-around;
+  row-gap: 5px;
+}
+
+.order-btn {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8em 1em;
+  justify-self: start;
 }
 
 .item-header {
