@@ -7,6 +7,7 @@ function navbar() {
   const navLinks = document.createElement("ul");
 
   navWrapper.classList.add("nav-wrapper");
+  navLinks.classList.add("main-nav");
   logo.classList.add("logo-header");
   logo.textContent = "Luna";
 
