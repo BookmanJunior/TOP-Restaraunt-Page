@@ -40,7 +40,6 @@ function menuItemsComponent() {
 
   menuWrapper.classList.add("menu-wrapper");
 
-  menuWrapper.classList.add("menu-wrapper");
   Object.values(menuItems).forEach((item) => {
     const itemContainer = document.createElement("div");
     const itemImg = new Image();
