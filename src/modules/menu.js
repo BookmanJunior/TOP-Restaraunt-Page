@@ -62,7 +62,7 @@ function menuItemsComponent() {
     itemImg.src = item.img;
     itemTitle.textContent = item.name;
     itemPrice.textContent = `$${item.price}`;
-    itemIngredients.textContent = item.ingredients;
+    itemIngredients.textContent = item.ingredients.join(", ");
     orderBtn.textContent = "Order Now";
 
     itemContainer.append(itemImg, itemInfoContainter);
