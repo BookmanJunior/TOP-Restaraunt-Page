@@ -104,14 +104,14 @@ header {
   min-height: 450px;
   background-image: var(--header-overlay), url("../assets/header.jpg");
   background-size: cover;
+  color: var(--color-primary);
   display: grid;
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: 70px 1fr 200px;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  color: var(--color-primary);
   border-bottom: var(--border-settings);
 }
 
@@ -144,6 +144,16 @@ nav {
   color: var(--color-primary);
 }
 
+.hero-wrapper {
+  grid-row: 3;
+  place-self: center;
+}
+
+.hero-text {
+  font-size: 3.125rem;
+  font-weight: 900;
+}
+
 /* Home styles */
 .home-section {
   height: 100vh;
@@ -172,17 +182,18 @@ nav {
 }
 
 .rest-disc {
-  font-size: 4rem;
+  font-size: clamp(3rem, 1.75rem + 4vw, 4rem);
   text-transform: uppercase;
 }
 
 .featured-items {
   border-top: var(--border-settings);
+  font-size: 1.125rem;
 }
 
 .featured-items-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-items: center;
   justify-items: center;
   row-gap: 0.5em;
