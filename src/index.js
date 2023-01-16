@@ -1,7 +1,8 @@
 import "./styles/style.css";
-import { navbar, header } from "./modules/header";
+import { header } from "./modules/header";
 import home from "./modules/home";
 import menu from "./modules/menu";
+import about from "./modules/about";
 
 const content = document.getElementById("content");
 
@@ -26,7 +27,12 @@ function tabSwitching(e) {
 
   if (e.target.matches(".menu-link")) {
     e.target.classList.add("active");
-    content.append(header(), menu());
+    content.append(header("Specialties"), menu());
     document.querySelector(".menu-link").classList.add("active");
+  }
+
+  if (e.target.matches(".about-link")) {
+    e.target.classList.add("active");
+    content.append(header("About"), about());
   }
 }
