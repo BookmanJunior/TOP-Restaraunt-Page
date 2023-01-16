@@ -314,6 +314,10 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
+  .menu-links {
+    grid-template-columns: 1fr;
+  }
+
   .menu-item {
     grid-template-columns: 1fr;
   }
