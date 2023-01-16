@@ -25,10 +25,18 @@ function navbar() {
   return navElement;
 }
 
-function header() {
+function header(page) {
   const headerElement = document.createElement("header");
+  const heroWrapper = document.createElement("div");
+  const heroText = document.createElement("h1");
 
-  headerElement.appendChild(navbar());
+  heroText.textContent = page;
+
+  heroWrapper.classList.add("hero-wrapper");
+  heroText.classList.add("hero-text");
+
+  heroWrapper.appendChild(heroText);
+  headerElement.append(navbar(), heroWrapper);
 
   return headerElement;
 }
