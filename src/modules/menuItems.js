@@ -10,32 +10,48 @@ const menuItems = {
     name: "Fish Tacos",
     img: fishTacos,
     price: 13,
-    ingredients: ["Fish", "Sriracha", "Garlic Powder", "Lime Juice"],
+    ingredients: ["Fish", "Sriracha", "Garlic powder", "Lime juice"],
   },
   item2: {
     name: "Chicken Tostadas",
     img: chickenTostadas,
     price: 8,
+    ingredients: [
+      "Pinto beans",
+      "Refried beans",
+      "Sour cream",
+      "White corn tortillas",
+    ],
   },
   item3: {
     name: "Baked Chicken Quesadillas",
     img: bakedChickenQuesadillas,
     price: 20,
+    ingredients: ["Sour cream", "Pepper jack cheese", "Shredded chicken"],
   },
   item4: {
     name: "Chicken Enchiladas",
     img: chickenEnchiladas,
     price: 15,
+    ingredients: ["Sour cream", "Easy enchilada sauce", "Shredded chicken"],
   },
   item5: {
     name: "Pico De Gallo",
     img: picoDeGallo,
     price: 10,
+    ingredients: ["Tomatoes", "Cilantro", "Black pepper", "Jalapeno pepper"],
   },
   item6: {
     name: "Black Bean Burrito",
     img: blackBeanBurrito,
     price: 12,
+    ingredients: [
+      "Black beans",
+      "Sour cream",
+      "Flour tortillas",
+      "Tomato",
+      "Green pepper",
+    ],
   },
 };
 
