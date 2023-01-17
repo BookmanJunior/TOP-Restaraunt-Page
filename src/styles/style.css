@@ -88,6 +88,11 @@ h6 {
   font-family: var(--ff-primary);
 }
 
+.menu-section,
+.about-section {
+  padding-block: 7em;
+}
+
 ul {
   display: flex;
   list-style: none;
@@ -219,10 +224,6 @@ nav {
 
 /* Menu style */
 
-.menu-section {
-  padding-block: 7em;
-}
-
 .container {
   margin-inline: auto;
 }
@@ -345,4 +346,55 @@ nav {
   .menu-link-active::after {
     opacity: 0;
   }
+}
+
+/* About styles */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.about-imgs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.about-imgs-wrapper > img {
+  width: 100%;
+  aspect-ratio: 1 / 1.8;
+  object-fit: cover;
+}
+
+.about {
+  margin-top: -1.5em;
+}
+
+.about-text-header {
+  display: grid;
+  gap: 3em;
+  line-height: 1;
+}
+
+.about-title {
+  font-size: 6.25rem;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.about-restaurant-title {
+  font-size: 3.125rem;
+  grid-row: 1 / 3;
+  grid-column: 1;
+  align-self: end;
+  max-width: 280px;
+}
+
+/* Utility styles */
+
+.accent-class {
+  font-family: var(--ff-accent);
+  color: var(--color-accent);
 }
