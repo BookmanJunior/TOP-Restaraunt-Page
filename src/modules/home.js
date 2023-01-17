@@ -19,7 +19,7 @@ function infoComponent() {
   const restaurantDisc = document.createElement("h1");
 
   infoWrapper.classList.add("info-wrapper");
-  logo.classList.add("main-logo");
+  logo.classList.add("main-logo", "accent-class");
   restaurantDisc.classList.add("rest-disc");
 
   logo.textContent = "Luna";
