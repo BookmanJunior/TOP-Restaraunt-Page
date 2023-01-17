@@ -182,8 +182,6 @@ nav {
 
 .main-logo {
   font-size: 5rem;
-  font-family: var(--ff-accent);
-  color: var(--color-accent);
 }
 
 .rest-disc {
