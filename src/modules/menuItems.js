@@ -24,7 +24,7 @@ const menuItems = {
     ],
   },
   item3: {
-    name: "Baked Chicken Quesadillas",
+    name: "Chicken Quesadillas",
     img: bakedChickenQuesadillas,
     price: 20,
     ingredients: ["Sour cream", "Pepper jack cheese", "Shredded chicken"],
