@@ -25,6 +25,10 @@ function aboutContent() {
   const aboutTextFooter = document.createElement("div");
   const about = document.createElement("p");
   const restTitle = document.createElement("h2");
+  const bodyContent = document.createElement("p");
+  const days = document.createElement("p");
+  const hours = document.createElement("span");
+  const phoneNumber = document.createElement("p");
 
   aboutWrapper.classList.add("about-content");
   aboutImgsContainer.classList.add("about-imgs-wrapper");
@@ -34,8 +38,12 @@ function aboutContent() {
   aboutTextHeader.classList.add("about-text-header");
   aboutTextBody.classList.add("about-text-body");
   aboutTextFooter.classList.add("about-text-footer");
-  about.classList.add("about-title", "accent-class");
+  about.classList.add("about-title", "clr-accent", "ff-accent");
   restTitle.classList.add("about-restaurant-title");
+  phoneNumber.classList.add("phone-number", "clr-accent");
+  bodyContent.classList.add("about-text");
+  days.classList.add("work-days");
+  hours.classList.add("work-hours");
 
   aboutImgContainer.draggable = false;
   aboutImg2Container.draggable = false;
@@ -44,8 +52,16 @@ function aboutContent() {
   aboutImg2Container.src = aboutImg2;
   about.textContent = "About";
   restTitle.textContent = "Luna Restaurant";
+  bodyContent.textContent =
+    "A small river named Duden flows by their place and supplies it with the necessary regelialia." +
+    "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.";
+  days.textContent = "Mon - Fri";
+  hours.textContent = " 8 AM - 11 PM";
+  phoneNumber.textContent = "+1-978-123-4567";
 
+  days.appendChild(hours);
   aboutImgsContainer.append(aboutImgContainer, aboutImg2Container);
+  aboutTextBody.append(bodyContent, days, phoneNumber);
   aboutTextWrapper.append(aboutTextHeader, aboutTextBody, aboutTextFooter);
   aboutWrapper.append(aboutImgsContainer, aboutTextWrapper);
   aboutTextHeader.append(about, restTitle);
