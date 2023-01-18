@@ -19,6 +19,25 @@ function aboutContent() {
   const aboutImgsContainer = document.createElement("div");
   const aboutImgContainer = new Image();
   const aboutImg2Container = new Image();
+
+  aboutWrapper.classList.add("about-content");
+  aboutImgsContainer.classList.add("about-imgs-wrapper");
+  aboutImgContainer.classList.add("about");
+  aboutImg2Container.classList.add("about-2");
+
+  aboutImgContainer.draggable = false;
+  aboutImg2Container.draggable = false;
+
+  aboutImgContainer.src = aboutImg;
+  aboutImg2Container.src = aboutImg2;
+
+  aboutImgsContainer.append(aboutImgContainer, aboutImg2Container);
+  aboutWrapper.append(aboutImgsContainer, aboutBodyText());
+
+  return aboutWrapper;
+}
+
+function aboutBodyText() {
   const aboutTextWrapper = document.createElement("div");
   const aboutTextHeader = document.createElement("div");
   const aboutTextBody = document.createElement("div");
@@ -30,10 +49,6 @@ function aboutContent() {
   const hours = document.createElement("span");
   const phoneNumber = document.createElement("p");
 
-  aboutWrapper.classList.add("about-content");
-  aboutImgsContainer.classList.add("about-imgs-wrapper");
-  aboutImgContainer.classList.add("about");
-  aboutImg2Container.classList.add("about-2");
   aboutTextWrapper.classList.add("about-text-wrapper");
   aboutTextHeader.classList.add("about-text-header");
   aboutTextBody.classList.add("about-text-body");
@@ -45,11 +60,6 @@ function aboutContent() {
   days.classList.add("work-days");
   hours.classList.add("work-hours");
 
-  aboutImgContainer.draggable = false;
-  aboutImg2Container.draggable = false;
-
-  aboutImgContainer.src = aboutImg;
-  aboutImg2Container.src = aboutImg2;
   about.textContent = "About";
   restTitle.textContent = "Luna Restaurant";
   bodyContent.textContent =
@@ -60,11 +70,9 @@ function aboutContent() {
   phoneNumber.textContent = "+1-978-123-4567";
 
   days.appendChild(hours);
-  aboutImgsContainer.append(aboutImgContainer, aboutImg2Container);
   aboutTextBody.append(bodyContent, days, phoneNumber);
   aboutTextWrapper.append(aboutTextHeader, aboutTextBody, aboutTextFooter);
-  aboutWrapper.append(aboutImgsContainer, aboutTextWrapper);
   aboutTextHeader.append(about, restTitle);
 
-  return aboutWrapper;
+  return aboutTextWrapper;
 }
