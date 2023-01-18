@@ -391,6 +391,20 @@ nav {
   max-width: 280px;
 }
 
+@media screen and (max-width: 770px) {
+  .about-imgs-wrapper > img {
+    aspect-ratio: 0.5 / 2;
+  }
+
+  .about {
+    transform: translateY(0);
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Utility styles */
 
 .clr-accent {
