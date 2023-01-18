@@ -4,11 +4,14 @@
 :root {
   --color-primary: #fff;
   --color-accent: #c8a97e;
+  --color-gray: #666666;
   --header-overlay: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5));
   --background-overlay: linear-gradient(rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.7));
   --border-settings: 1px solid rgb(255 255 255 / 0.1);
   --ff-primary: "Poppins", Arial, sans-serif;
   --ff-accent: "Great Vibes", "Comic Sans MS", "Comic Sans", cursive;
+  --ff-bold: 900;
+  --ff-semi-bold: 600;
 }
 
 /*
@@ -133,7 +136,7 @@ nav {
 
 .logo-header {
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: var(--ff-bold);
 }
 
 .main-nav {
@@ -156,7 +159,6 @@ nav {
 
 .hero-text {
   font-size: 3.125rem;
-  font-weight: 900;
 }
 
 /* Home styles */
@@ -235,7 +237,7 @@ nav {
 
 .menu-links > li {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: var(--ff-semi-bold);
   padding: 1em;
 }
 
@@ -312,7 +314,7 @@ nav {
 
 .item-header > * {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: var(--ff-semi-bold);
 }
 
 .item-header > h2 {
@@ -350,7 +352,7 @@ nav {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 2em;
 }
 
@@ -362,8 +364,7 @@ nav {
 
 .about-imgs-wrapper > img {
   width: 100%;
-  max-height: 500px;
-  aspect-ratio: 1 / 2;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -391,11 +392,32 @@ nav {
   max-width: 280px;
 }
 
-@media screen and (max-width: 770px) {
-  .about-imgs-wrapper > img {
-    aspect-ratio: 0.5 / 2;
-  }
+.about-text,
+.work-days {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--color-gray);
+}
 
+.about-text {
+  margin-block: 1.5em 1em;
+  max-width: 400px;
+}
+
+.work-days {
+  margin-block: 1em;
+}
+
+.work-hours {
+  font-weight: var(--ff-bold);
+}
+
+.phone-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 770px) {
   .about {
     transform: translateY(0);
   }
