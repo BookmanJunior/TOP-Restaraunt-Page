@@ -1,14 +1,11 @@
-import { navbar } from "./header";
 import menuItems from "./menuItems";
 
-export default function home() {
+function home() {
   const homeSection = document.createElement("section");
 
   homeSection.classList.add("home-section");
 
-  homeSection.appendChild(navbar());
-  homeSection.appendChild(infoComponent());
-  homeSection.appendChild(featuredItems());
+  homeSection.append(infoComponent());
 
   return homeSection;
 }
@@ -32,7 +29,7 @@ function infoComponent() {
 }
 
 function featuredItems() {
-  const featuredItemsContainer = document.createElement("div");
+  const featuredItemsContainer = document.createElement("section");
   const featuredItemsWrapper = document.createElement("div");
 
   featuredItemsContainer.classList.add("featured-items");
@@ -60,3 +57,5 @@ function featuredItems() {
 
   return featuredItemsContainer;
 }
+
+export { home, featuredItems };
