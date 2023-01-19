@@ -1,15 +1,16 @@
 import "./styles/style.css";
-import { header } from "./modules/header";
-import home from "./modules/home";
+import { navbar, header } from "./modules/header";
+import { home, featuredItems } from "./modules/home";
 import menu from "./modules/menu";
 import about from "./modules/about";
 
 const content = document.getElementById("content");
 
 content.addEventListener("click", tabSwitching);
+document.body.addEventListener("click", menuToggle);
 
 function defaultPage() {
-  content.appendChild(home());
+  content.append(navbar(), home(), featuredItems());
   document.querySelector(".home-link").classList.add("active");
 }
 
@@ -21,8 +22,7 @@ function tabSwitching(e) {
   }
 
   if (e.target.matches(".home-link")) {
-    content.append(home());
-    document.querySelector(".home-link").classList.add("active");
+    defaultPage();
   }
 
   if (e.target.matches(".menu-link")) {
@@ -34,5 +34,12 @@ function tabSwitching(e) {
   if (e.target.matches(".about-link")) {
     e.target.classList.add("active");
     content.append(header("About"), about());
+  }
+}
+
+function menuToggle(e) {
+  if (e.target.matches(".nav-toggler")) {
+    const navCollapse = document.querySelector(".nav-collapse");
+    navCollapse.classList.toggle("display");
   }
 }
