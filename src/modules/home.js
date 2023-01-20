@@ -1,11 +1,11 @@
 import menuItems from "./menuItems";
 
-function home() {
+export default function home() {
   const homeSection = document.createElement("section");
 
   homeSection.classList.add("home-section");
 
-  homeSection.append(infoComponent());
+  homeSection.append(infoComponent(), featuredItems());
 
   return homeSection;
 }
@@ -57,5 +57,3 @@ function featuredItems() {
 
   return featuredItemsContainer;
 }
-
-export { home, featuredItems };
