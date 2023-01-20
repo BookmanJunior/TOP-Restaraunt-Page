@@ -10,7 +10,7 @@ function navbar() {
   const navCollapse = document.createElement("div");
 
   navElement.classList.add("main-nav");
-  navWrapper.classList.add("nav-wrapper");
+  navWrapper.classList.add("main-nav-wrapper");
   navLinks.classList.add("main-nav-links");
   logo.classList.add("logo-header");
   navToggler.classList.add("nav-toggler");
