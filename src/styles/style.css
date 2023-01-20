@@ -188,6 +188,17 @@ nav.floating .nav-item.active:hover {
   padding-block: 1em;
 }
 
+.nav-collapse.display {
+  display: block;
+}
+
+nav.floating {
+  position: fixed;
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
 .hero-wrapper {
   grid-row: 3;
   place-self: center;
