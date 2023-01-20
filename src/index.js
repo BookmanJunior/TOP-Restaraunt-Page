@@ -27,14 +27,13 @@ function tabSwitching(e) {
   }
 
   if (e.target.matches(".menu-link")) {
-    e.target.classList.add("active");
     content.append(header("Specialties"), menu());
     document.querySelector(".menu-link").classList.add("active");
   }
 
   if (e.target.matches(".about-link")) {
-    e.target.classList.add("active");
     content.append(header("About"), about());
+    document.querySelector(".about-link").classList.add("active");
   }
 }
 
