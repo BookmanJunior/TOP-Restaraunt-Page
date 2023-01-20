@@ -47,7 +47,7 @@ function menuToggle(e) {
 
 function navFloatToggle() {
   const mainNav = document.querySelector("nav");
-  if (window.scrollY >= 150) {
+  if (window.scrollY >= 400) {
     mainNav.classList.add("floating");
   } else {
     mainNav.classList.remove("floating");
