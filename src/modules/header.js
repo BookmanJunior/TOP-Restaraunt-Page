@@ -47,7 +47,7 @@ function header(page) {
   heroText.classList.add("hero-text");
 
   heroWrapper.appendChild(heroText);
-  headerElement.append(navbar(), heroWrapper);
+  headerElement.appendChild(heroWrapper);
 
   return headerElement;
 }
