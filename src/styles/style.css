@@ -170,11 +170,44 @@ nav.floating .nav-item.active:hover {
   display: none;
   border: none;
   outline: none;
-  background-color: #000000;
+  background-color: transparent;
   color: rgb(255 255 255 / 0.5);
   cursor: pointer;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+}
+
+.floating .line {
+  fill: var(--color-black);
+}
+
+.hamburger {
+  pointer-events: none;
+}
+
+.nav-toggler .line {
+  transition: y 250ms ease-in 250ms, rotate 250ms ease-in, opacity 0ms 250ms;
+  transform-origin: center;
+}
+
+.nav-toggler .line.open {
+  transition: y 250ms ease-in, rotate 250ms ease-in 250ms, opacity 0ms 250ms;
+}
+
+.nav-toggler :is(.line-top.open, .line-bottom.open) {
+  y: 45;
+}
+
+.nav-toggler .line-top.open {
+  rotate: 45deg;
+}
+
+.nav-toggler .line-bottom.open {
+  rotate: -45deg;
+}
+
+.nav-toggler .line-middle.open {
+  opacity: 0;
 }
 
 .nav-collapse {
