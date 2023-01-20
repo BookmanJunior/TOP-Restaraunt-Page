@@ -199,6 +199,30 @@ nav.floating {
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+@media screen and (min-width: 981px) {
+  .nav-collapse.show,
+  .nav-collapse > ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  nav {
+    color: var(--color-primary);
+    background-color: var(--color-black);
+    border-bottom: none;
+    position: static;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggler {
+    display: block;
+  }
+}
+
 .hero-wrapper {
   grid-row: 3;
   place-self: center;
