@@ -9,8 +9,9 @@ function navbar() {
   const navToggler = document.createElement("button");
   const navCollapse = document.createElement("div");
 
+  navElement.classList.add("main-nav");
   navWrapper.classList.add("nav-wrapper");
-  navLinks.classList.add("main-nav");
+  navLinks.classList.add("main-nav-links");
   logo.classList.add("logo-header");
   navToggler.classList.add("nav-toggler");
   navCollapse.classList.add("nav-collapse");
