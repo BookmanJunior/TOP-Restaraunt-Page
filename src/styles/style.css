@@ -295,6 +295,17 @@ nav.floating {
   user-select: none;
 }
 
+@media screen and (max-width: 820px) {
+  .home-section {
+    height: calc(100vh + 550px);
+  }
+
+  .featured-items-wrapper {
+    grid-template-columns: 1fr;
+    padding-block: 2em;
+  }
+}
+
 /* Menu style */
 
 .container {
