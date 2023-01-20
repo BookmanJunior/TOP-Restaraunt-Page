@@ -120,7 +120,7 @@ header {
   grid-template-rows: auto 1fr 200px;
 }
 
-nav {
+.main-nav {
   display: flex;
   justify-content: center;
   border-bottom: var(--border-settings);
@@ -148,7 +148,7 @@ nav {
   font-weight: var(--ff-bold);
 }
 
-.main-nav {
+.main-nav-links {
   gap: 2.5em;
 }
 
@@ -161,8 +161,8 @@ nav {
   color: var(--color-primary);
 }
 
-nav.floating .nav-item:hover,
-nav.floating .nav-item.active:hover {
+.main-nav.floating .nav-item:hover,
+.main-nav.floating .nav-item.active:hover {
   color: var(--color-black);
 }
 
@@ -225,7 +225,7 @@ nav.floating .nav-item.active:hover {
   display: block;
 }
 
-nav.floating {
+.main-nav.floating {
   position: fixed;
   background-color: var(--color-primary);
   color: var(--color-black);
@@ -240,14 +240,14 @@ nav.floating {
 }
 
 @media screen and (max-width: 980px) {
-  nav {
+  .main-nav {
     color: var(--color-primary);
     background-color: var(--color-black);
     border-bottom: none;
     position: static;
   }
 
-  .main-nav {
+  .main-nav-links {
     display: none;
   }
 
