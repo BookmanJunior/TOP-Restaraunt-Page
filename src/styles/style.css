@@ -295,9 +295,15 @@ nav.floating {
   user-select: none;
 }
 
+@media screen and (max-width: 980px) {
+  .home-section {
+    height: calc(100vh - 69px);
+  }
+}
+
 @media screen and (max-width: 820px) {
   .home-section {
-    height: calc(100vh + 550px);
+    height: calc(100vh + 570px);
   }
 
   .featured-items-wrapper {
