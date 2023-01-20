@@ -1,16 +1,17 @@
 import "./styles/style.css";
 import { navbar, header } from "./modules/header";
-import { home, featuredItems } from "./modules/home";
+import home from "./modules/home";
 import menu from "./modules/menu";
 import about from "./modules/about";
 
 const content = document.getElementById("content");
 
 content.addEventListener("click", tabSwitching);
-document.body.addEventListener("click", menuToggle);
+content.addEventListener("click", menuToggle);
+window.addEventListener("scroll", navFloatToggle);
 
 function defaultPage() {
-  content.append(navbar(), home(), featuredItems());
+  content.append(navbar(), home());
   document.querySelector(".home-link").classList.add("active");
 }
 
@@ -41,5 +42,14 @@ function menuToggle(e) {
   if (e.target.matches(".nav-toggler")) {
     const navCollapse = document.querySelector(".nav-collapse");
     navCollapse.classList.toggle("display");
+  }
+}
+
+function navFloatToggle() {
+  const mainNav = document.querySelector("nav");
+  if (window.scrollY >= 150) {
+    mainNav.classList.add("floating");
+  } else {
+    mainNav.classList.remove("floating");
   }
 }
