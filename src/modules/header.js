@@ -15,13 +15,13 @@ function navbar() {
   navToggler.classList.add("nav-toggler");
   navCollapse.classList.add("nav-collapse");
   logo.textContent = "Luna";
-  navToggler.textContent = "menu";
 
   navElement.appendChild(navWrapper);
   navWrapper.appendChild(logo);
   navWrapper.appendChild(navLinks);
   navWrapper.appendChild(navToggler);
   navWrapper.appendChild(navCollapse);
+  navToggler.appendChild(svgHam());
   navCollapse.appendChild(navLinksCopy);
 
   links.forEach((link) => {
@@ -52,3 +52,34 @@ function header(page) {
 }
 
 export { navbar, header };
+
+function svgHam() {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const rectOne = rectComponent("line-top", "25");
+  const rectTwo = rectComponent("line-middle", "45");
+  const rectThree = rectComponent("line-bottom", "65");
+
+  svg.classList.add("hamburger");
+
+  svg.setAttribute("viewBox", "0 0 100 100");
+  svg.setAttribute("width", "35");
+
+  svg.append(rectOne, rectTwo, rectThree);
+
+  return svg;
+}
+
+function rectComponent(classTwo, y, x = 10, classOne = "line") {
+  const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+
+  rect.classList.add(classOne, classTwo);
+
+  rect.setAttribute("width", "80");
+  rect.setAttribute("height", "10");
+  rect.setAttribute("x", x);
+  rect.setAttribute("y", y);
+  rect.setAttribute("rx", "5");
+  rect.setAttribute("fill", "white");
+
+  return rect;
+}
