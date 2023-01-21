@@ -15,6 +15,7 @@ function navbar() {
   logo.classList.add("logo-header");
   navToggler.classList.add("nav-toggler");
   navCollapse.classList.add("nav-collapse");
+  navLinksCopy.classList.add("nav-collapse-links");
   logo.textContent = "Luna";
 
   navElement.appendChild(navWrapper);
