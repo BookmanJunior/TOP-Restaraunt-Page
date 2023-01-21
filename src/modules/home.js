@@ -45,6 +45,7 @@ function featuredItems() {
       featuredItem.classList.add("featured-item");
 
       itemImg.src = item.img;
+      itemImg.alt = item.name;
       itemImg.draggable = false;
       itemName.textContent = item.name;
 

@@ -60,6 +60,7 @@ function menuItemsComponent() {
     orderBtn.classList.add("order-btn");
 
     itemImg.src = item.img;
+    itemImg.alt = item.name;
     itemTitle.textContent = item.name;
     itemPrice.textContent = `$${item.price}`;
     itemIngredients.textContent = item.ingredients.join(", ");
