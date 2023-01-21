@@ -51,9 +51,24 @@ function menuToggle(e) {
 
 function navFloatToggle() {
   const mainNav = document.querySelector("nav");
+
+  if (window.scrollY >= 100) {
+    mainNav.classList.add("scrolled");
+  }
+
   if (window.scrollY >= 400) {
     mainNav.classList.add("floating");
-  } else {
+  }
+
+  if (window.scrollY >= 100 && window.scrollY <= 200) {
+    mainNav.classList.add("sleep");
+  }
+
+  if (window.scrollY <= 250) {
     mainNav.classList.remove("floating");
+  }
+
+  if (window.scrollY <= 150) {
+    mainNav.classList.remove("sleep", "scrolled");
   }
 }
