@@ -106,7 +106,9 @@ ul {
   font-weight: 400;
 }
 
-:is(li, button, .logo-header, ) {
+li,
+button,
+.logo-header {
   cursor: pointer;
 }
 
@@ -176,21 +178,28 @@ header {
   text-transform: uppercase;
 }
 
-.floating .line {
-  fill: var(--color-black);
-}
-
 .hamburger {
   pointer-events: none;
 }
 
 .nav-toggler .line {
-  transition: y 250ms ease-in 250ms, rotate 250ms ease-in, opacity 0ms 250ms;
+  fill: var(--color-primary);
+  transition: fill 200ms ease-in-out, y 200ms ease-in 200ms,
+    rotate 200ms ease-in, opacity 0ms 200ms;
   transform-origin: center;
 }
 
+.main-nav.floating .line {
+  fill: var(--color-black);
+}
+
+.nav-toggler:hover .line {
+  fill: var(--color-accent);
+}
+
 .nav-toggler .line.open {
-  transition: y 250ms ease-in, rotate 250ms ease-in 250ms, opacity 0ms 250ms;
+  transition: fill 200ms ease-in-out, y 200ms ease-in,
+    rotate 200ms ease-in 200ms, opacity 0ms 200ms;
 }
 
 .nav-toggler :is(.line-top.open, .line-bottom.open) {
