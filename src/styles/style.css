@@ -133,6 +133,24 @@ header {
   color: white;
 }
 
+.main-nav.scrolled {
+  position: fixed;
+  padding-block: 0.5em;
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+  transform: translateY(-100px);
+}
+
+.main-nav.sleep {
+  transition: transform 300ms ease-out;
+}
+
+.main-nav.floating {
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
+}
+
 .main-nav-wrapper,
 .container {
   width: min(1140px, 90%);
@@ -242,13 +260,6 @@ header {
   opacity: 1;
   visibility: visible;
   transition: opacity 100ms ease-in-out 150ms;
-}
-
-.main-nav.floating {
-  position: fixed;
-  background-color: var(--color-primary);
-  color: var(--color-black);
-  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
 @media screen and (min-width: 981px) {
