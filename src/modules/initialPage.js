@@ -8,5 +8,3 @@ export default function initialPage() {
     link.classList.add("active");
   });
 }
-
-initialPage();
