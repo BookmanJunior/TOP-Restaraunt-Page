@@ -207,17 +207,17 @@ header {
   transform-origin: center;
 }
 
+.nav-toggler .line.open {
+  transition: fill 200ms ease-in-out, y 200ms ease-in,
+    rotate 200ms ease-in 200ms, opacity 0ms 200ms;
+}
+
 .main-nav.floating .line {
   fill: var(--color-black);
 }
 
 .nav-toggler:hover .line {
   fill: var(--color-accent);
-}
-
-.nav-toggler .line.open {
-  transition: fill 200ms ease-in-out, y 200ms ease-in,
-    rotate 200ms ease-in 200ms, opacity 0ms 200ms;
 }
 
 .nav-toggler :is(.line-top.open, .line-bottom.open) {
@@ -456,6 +456,15 @@ header {
 .order-btn:is(:hover, :active) {
   background-color: var(--color-primary);
   color: var(--color-accent);
+}
+
+.order-btn,
+.menu-item {
+  transition: 200ms ease-in;
+}
+
+:is(.order-btn, .menu-nav-item):is(:hover, :active) {
+  transition: all 200ms ease-in;
 }
 
 .item-header {
