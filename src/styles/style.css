@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
 :root {
-  --bg-color-primary: #fff;
-  --bg-color-accent: #c8a97e;
   --color-primary: #fff;
   --color-accent: #c8a97e;
   --color-gray: #666666;
@@ -15,6 +13,7 @@
   --ff-accent: "Great Vibes", "Comic Sans MS", "Comic Sans", cursive;
   --ff-bold: 900;
   --ff-semi-bold: 600;
+  --stagger-delay: 50ms;
 }
 
 /*
@@ -587,6 +586,68 @@ header {
   .about-content {
     grid-template-columns: 1fr;
   }
+}
+
+/* Animation */
+
+.info-wrapper,
+.hero-wrapper {
+  opacity: 0;
+  animation: 500ms ease-in-out slideInUp forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.featured-item,
+.menu-nav-item,
+.about-imgs-wrapper,
+.about-text-wrapper,
+.menu-item {
+  opacity: 0;
+  animation: 500ms ease-in-out slideInUp forwards;
+}
+
+/* :is(.featured-item, .menu-nav-item):is(:nth-child(1)) {
+  animation-delay: 0ms;
+} */
+
+:is(.featured-item, .menu-nav-item, .menu-item):is(:nth-child(2)) {
+  animation-delay: var(--stagger-delay);
+}
+
+:is(.featured-item, .menu-nav-item, .menu-item):is(:nth-child(3)) {
+  animation-delay: calc(var(--stagger-delay) + 25ms);
+}
+
+:is(.featured-item, .menu-nav-item, .menu-item):is(:nth-child(4)) {
+  animation-delay: calc(var(--stagger-delay) + 50ms);
+}
+
+:is(.menu-nav-item, .menu-item):is(:nth-child(5)) {
+  animation-delay: calc(var(--stagger-delay) + 75ms);
+}
+
+:is(.menu-item):is(:nth-child(6)) {
+  animation-delay: calc(var(--stagger-delay) + 95ms);
+}
+
+.about-imgs-wrapper {
+  animation-delay: 0;
+}
+
+.about-text-wrapper {
+  animation-delay: 25ms;
 }
 
 /* Utility styles */
