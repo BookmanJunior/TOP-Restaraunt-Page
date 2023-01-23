@@ -244,8 +244,9 @@ header {
 }
 
 .nav-collapse > ul {
-  opacity: 0;
   flex-direction: column;
+  align-items: start;
+  opacity: 0;
   gap: 2em;
   padding-block: 1em;
   visibility: hidden;
