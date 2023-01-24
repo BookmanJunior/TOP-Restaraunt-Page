@@ -10,6 +10,7 @@ function navbar() {
   const navCollapse = document.createElement("div");
 
   navElement.id = "mainNav";
+  navToggler.id = "navToggler";
   navElement.classList.add("main-nav");
   navWrapper.classList.add("main-nav-wrapper");
   navLinks.classList.add("main-nav-links");
