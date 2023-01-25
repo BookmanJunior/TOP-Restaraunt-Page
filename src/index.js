@@ -1,10 +1,11 @@
 import "./styles/style.css";
 import { navbar, header } from "./modules/header";
 import initialPage from "./modules/initialPage";
-import navBarToggle from "./modules/navBarToggle";
 import menu from "./modules/menu";
 import about from "./modules/about";
+import navBarToggle from "./modules/navBarToggle";
 import navFloatToggle from "./modules/navBarOnScroll";
+import toggleNavLinkClasses from "./modules/toggleNavLinkClasses";
 
 initialPage();
 
@@ -34,11 +35,4 @@ function tabSwitching(e) {
     content.append(navbar(), header("About"), about());
     toggleNavLinkClasses("about");
   }
-}
-
-function toggleNavLinkClasses(element) {
-  const items = [...document.getElementsByClassName(`${element}-link`)];
-  items.forEach((item) => {
-    item.classList.add("active");
-  });
 }
