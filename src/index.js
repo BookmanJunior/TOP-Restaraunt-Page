@@ -1,74 +1,44 @@
 import "./styles/style.css";
 import { navbar, header } from "./modules/header";
-import home from "./modules/home";
+import initialPage from "./modules/initialPage";
+import navBarToggle from "./modules/navBarToggle";
 import menu from "./modules/menu";
 import about from "./modules/about";
+import navFloatToggle from "./modules/navBarOnScroll";
+
+initialPage();
 
 const content = document.getElementById("content");
 
 content.addEventListener("click", tabSwitching);
-content.addEventListener("click", menuToggle);
+content.addEventListener("click", navBarToggle);
 window.addEventListener("scroll", navFloatToggle);
 
-function defaultPage() {
-  content.append(navbar(), home());
-  document.querySelector(".home-link").classList.add("active");
-}
-
-defaultPage();
-
 function tabSwitching(e) {
-  if (e.target.matches(".nav-item")) {
+  if (e.target.matches(".nav-item") || e.target.matches(".logo-header")) {
     content.textContent = "";
   }
 
-  if (e.target.matches(".home-link")) {
-    defaultPage();
+  if (e.target.matches(".home-link") || e.target.matches(".logo-header")) {
+    initialPage();
+    return;
   }
 
   if (e.target.matches(".menu-link")) {
     content.append(navbar(), header("Specialties"), menu());
-    document.querySelector(".menu-link").classList.add("active");
+    toggleNavLinkClasses("menu");
+    return;
   }
 
   if (e.target.matches(".about-link")) {
     content.append(navbar(), header("About"), about());
-    document.querySelector(".about-link").classList.add("active");
+    toggleNavLinkClasses("about");
   }
 }
 
-function menuToggle(e) {
-  if (e.target.matches(".nav-toggler")) {
-    const navCollapse = document.querySelector(".nav-collapse");
-    const navLines = [...document.getElementsByClassName("line")];
-
-    navCollapse.classList.toggle("display");
-    navLines.forEach((line) => {
-      line.classList.toggle("open");
-    });
-  }
-}
-
-function navFloatToggle() {
-  const mainNav = document.querySelector("nav");
-
-  if (window.scrollY >= 100) {
-    mainNav.classList.add("scrolled");
-  }
-
-  if (window.scrollY >= 400) {
-    mainNav.classList.add("floating");
-  }
-
-  if (window.scrollY >= 100 && window.scrollY <= 200) {
-    mainNav.classList.add("sleep");
-  }
-
-  if (window.scrollY <= 250) {
-    mainNav.classList.remove("floating");
-  }
-
-  if (window.scrollY <= 150) {
-    mainNav.classList.remove("sleep", "scrolled");
-  }
+function toggleNavLinkClasses(element) {
+  const items = [...document.getElementsByClassName(`${element}-link`)];
+  items.forEach((item) => {
+    item.classList.add("active");
+  });
 }
