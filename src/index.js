@@ -3,9 +3,8 @@ import { navbar, header } from "./modules/header";
 import initialPage from "./modules/initialPage";
 import menu from "./modules/menu";
 import about from "./modules/about";
-import navBarToggle from "./modules/navBarToggle";
 import navFloatToggle from "./modules/navBarOnScroll";
-import toggleNavLinkClasses from "./modules/toggleNavLinkClasses";
+import { navBarToggle, navLinkClassToggle } from "./modules/navBarFunctions";
 
 initialPage();
 
@@ -27,12 +26,12 @@ function tabSwitching(e) {
 
   if (e.target.matches(".menu-link")) {
     content.append(navbar(), header("Specialties"), menu());
-    toggleNavLinkClasses("menu");
+    navLinkClassToggle("menu");
     return;
   }
 
   if (e.target.matches(".about-link")) {
     content.append(navbar(), header("About"), about());
-    toggleNavLinkClasses("about");
+    navLinkClassToggle("about");
   }
 }
