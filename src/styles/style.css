@@ -171,16 +171,19 @@ header {
   gap: 2.5em;
 }
 
-.nav-item.active {
+.nav-item,
+.nav-item:is(.active, .active:hover, :hover) {
+  transition: 200ms ease-in;
+}
+
+.nav-item:is(.active, :hover) {
   color: var(--color-accent);
 }
 
-.nav-item:hover,
 .nav-item.active:hover {
   color: var(--color-primary);
 }
 
-.main-nav.floating .nav-item:hover,
 .main-nav.floating .nav-item.active:hover {
   color: var(--color-black);
 }
